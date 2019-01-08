@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "RNG_English.h"
+#include "RNG.h"
 int main(int argc, char* argv[])
 {
 	using std::cout;
@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
 		cin>>upper;
 	}
 	
-	RNG_English RNG(lower,upper);
+	RNG RNG(lower,upper);
 	if(choice == 1)
 		RNG.Lang(false);
 	else

@@ -1,8 +1,8 @@
 #include <iostream>
-class RNG_English
+class RNG
 {
 	public:
-		RNG_English(int l, int u);
+		RNG(int l, int u);
 		int NewNumber();
 		bool Remaining();
 		void Lang(bool which);
