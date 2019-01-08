@@ -6,41 +6,33 @@ RNG::RNG(int l, int u):lowerBound{l}, upperBound{u}
 {
 		done = false;
 		diff = u-l+1;
-		numList.resize(diff);
-		count = 0;
+		
+		while(l <= u)
+		{
+			numList.push_back(l);
+			l++;
+		}
 }
 int RNG::newNumber()
 {
-	srand(time(NULL));	
-	int num = rand()%diff + lowerBound;
 	
-	while(Repeat(num-lowerBound))
-	{
-		srand(time(NULL));	
-		num = rand()%diff + lowerBound;
-	}
+	srand(time(NULL));	
+	int index = rand()%diff;
 	
 	if(!language)
-		std::cout<<num<<std::endl;
-	
-	count++;
+	{
+		std::cout<<numList.at(index)<<std::endl;
+	}
+	numList.erase(numList.begin()+index);
+	diff--;
 	return 0;
 }
-bool RNG::Repeat(int check)
-{
-	if(numList.at(check) == true)
-		return true;
-	else
-	{
-		numList.at(check) = true;
-		return false;
-	}
-}
+
 void RNG::Lang(bool which)
 {
 	language = which;
 }
 bool RNG::getDone()
 {
-	return count==diff;
+	return diff==0;
 }
