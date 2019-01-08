@@ -44,9 +44,9 @@ int main(int argc, char* argv[])
 		RNG.Lang(false);
 	else
 		RNG.Lang(true);
-	while(RNG.Remaining() && next)
+	while(!RNG.getDone() && next)
 	{
-		RNG.NewNumber();
+		RNG.newNumber();
 		cout<<"Do you wish to continue Y or N?"<<endl;
 		cin>>go;
 		while(go != 'Y' && go != 'y' && go != 'n' && go != 'N')
