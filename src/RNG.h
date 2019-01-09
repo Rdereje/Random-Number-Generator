@@ -8,6 +8,8 @@ class RNG
 		int newNumber();
 		void Lang(bool which);
 		bool getDone();
+		void newBounds(int l, int u);
+		void restart();
 	private:
 		int lowerBound;
 		int upperBound;

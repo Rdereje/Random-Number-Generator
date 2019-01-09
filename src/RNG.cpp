@@ -13,6 +13,23 @@ RNG::RNG(int l, int u):lowerBound{l}, upperBound{u}
 			l++;
 		}
 }
+
+void RNG::newBounds(int l, int u)
+{
+	lowerBound = l;
+	upperBound = u;
+	done = false;
+	diff = u-l+1;
+	while(l <= u)
+	{
+		numList.push_back(l);
+		l++;
+	}
+}
+void RNG::restart()
+{
+	numList.clear();
+}
 int RNG::newNumber()
 {
 	
@@ -34,5 +51,5 @@ void RNG::Lang(bool which)
 }
 bool RNG::getDone()
 {
-	return diff==0;
+	return diff!=0;
 }
