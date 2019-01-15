@@ -99,17 +99,3 @@ void Generate(bool next, RNG* RNG)
 		Generate(true, RNG);
 	}
 }
-int main(int argc, char* argv[])
-{
-	
-	char go;
-	
-	start();
-	
-	RNG RNG(lower,upper);
-	
-	Generate(true, &RNG);
-	
-	
-	return 0;
-}

@@ -1,0 +1,14 @@
+#include <SDL.h>
+#include <SDL_image.h>
+#include <iostream>
+const int width = 
+const int length = 
+bool init()
+{
+	if(SDL_Inite(SDL_INIT_VIDEO)<0)
+	{
+		printf("SDL could load");
+		return false;
+	}
+	else
+}

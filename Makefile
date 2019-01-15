@@ -14,7 +14,9 @@ OBJ := $(patsubst src/%.cpp, obj/%.o, $(SRC))
 
 
 CC = g++
-CFLAGS = -c 
+CFLAGS = -c -IC:/mingwdev/include/SDL2
+INCLUDE = -IC:/mingwdev/include/SDL2
+LFLAGS = -LC:/mingwdev/lib -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_net -lSDL2_mixer
 MAIN = main
 
 .PHONY: clean
@@ -25,7 +27,7 @@ all: $(MAIN)
 # target : dependencies
 # 	recipe
 $(MAIN): $(OBJ)
-	$(CC) $^ -o $(MAIN)
+	$(CPP) $^ $(LFLAGS) -o $(MAIN)
 
 
 # compile source files to /obj/ (no linking)
